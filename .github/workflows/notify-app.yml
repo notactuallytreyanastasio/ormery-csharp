@@ -1,0 +1,37 @@
+name: Notify app repo
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout lib repo
+        uses: actions/checkout@v4
+
+      - name: Set up SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.DEPLOY_KEY_APP }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+          git config --global core.sshCommand "ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no"
+
+      - name: Update app repo version
+        run: |
+          REPO_NAME="${GITHUB_REPOSITORY##*/}"
+          APP_REPO="${REPO_NAME}-app"
+          git clone "git@github.com:notactuallytreyanastasio/${APP_REPO}.git" app-repo
+          cd app-repo
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          echo "${{ github.sha }}" > LIB_VERSION
+          git add LIB_VERSION
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Bump lib version to ${{ github.sha }}"
+            git push
+          fi
