@@ -1,11 +1,11 @@
-name: Notify app repo
+name: Update app vendor
 
 on:
   push:
     branches: [main]
 
 jobs:
-  notify:
+  update-app:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout lib repo
@@ -19,19 +19,27 @@ jobs:
           ssh-keyscan github.com >> ~/.ssh/known_hosts
           git config --global core.sshCommand "ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no"
 
-      - name: Update app repo version
+      - name: Update app repo vendor
         run: |
-          REPO_NAME="${GITHUB_REPOSITORY##*/}"
-          APP_REPO="${REPO_NAME}-app"
-          git clone "git@github.com:notactuallytreyanastasio/${APP_REPO}.git" app-repo
+          git clone git@github.com:notactuallytreyanastasio/ormery-csharp-app.git app-repo
           cd app-repo
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git config user.name "github-actions[bot]"
-          echo "${{ github.sha }}" > LIB_VERSION
-          git add LIB_VERSION
+
+          # Remove old vendor content
+          rm -rf TodoApp/vendor/ormery TodoApp/vendor/std TodoApp/vendor/temper-core
+          mkdir -p TodoApp/vendor
+
+          # Copy new ORMery output from lib repo
+          cp -r ../ormery TodoApp/vendor/ormery
+          cp -r ../std TodoApp/vendor/std
+          cp -r ../temper-core TodoApp/vendor/temper-core
+
+          # Commit and push
+          git add -A
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "Bump lib version to ${{ github.sha }}"
+            git commit -m "Update ORMery vendor from ${GITHUB_SHA}"
             git push
           fi
