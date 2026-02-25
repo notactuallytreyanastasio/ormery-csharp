@@ -11,21 +11,21 @@ namespace TemperLang.Std.Regex
         {
             return IRegexNode.CompiledDefault(this);
         }
-        public bool Found(string text___1401)
+        public bool Found(string text___1421)
         {
-            return IRegexNode.FoundDefault(this, text___1401);
+            return IRegexNode.FoundDefault(this, text___1421);
         }
-        public Match Find(string text___1403)
+        public Match Find(string text___1423)
         {
-            return IRegexNode.FindDefault(this, text___1403);
+            return IRegexNode.FindDefault(this, text___1423);
         }
-        public string Replace(string text___1405, S::Func<Match, string> format___1406)
+        public string Replace(string text___1425, S::Func<Match, string> format___1426)
         {
-            return IRegexNode.ReplaceDefault(this, text___1405, (S::Func<Match, string>) format___1406);
+            return IRegexNode.ReplaceDefault(this, text___1425, (S::Func<Match, string>) format___1426);
         }
-        public G::IReadOnlyList<string> Split(string text___1408)
+        public G::IReadOnlyList<string> Split(string text___1428)
         {
-            return IRegexNode.SplitDefault(this, text___1408);
+            return IRegexNode.SplitDefault(this, text___1428);
         }
     }
 }

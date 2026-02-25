@@ -4,46 +4,46 @@ namespace TemperLang.Std.Regex
 {
     public class CodeRange: ICodePart
     {
-        readonly int min__204;
-        readonly int max__205;
-        public CodeRange(int min__207, int max__208)
+        readonly int min__206;
+        readonly int max__207;
+        public CodeRange(int min__209, int max__210)
         {
-            this.min__204 = min__207;
-            this.max__205 = max__208;
+            this.min__206 = min__209;
+            this.max__207 = max__210;
         }
         public int Min
         {
             get
             {
-                return this.min__204;
+                return this.min__206;
             }
         }
         public int Max
         {
             get
             {
-                return this.max__205;
+                return this.max__207;
             }
         }
         public Regex Compiled()
         {
             return IRegexNode.CompiledDefault(this);
         }
-        public bool Found(string text___1321)
+        public bool Found(string text___1341)
         {
-            return IRegexNode.FoundDefault(this, text___1321);
+            return IRegexNode.FoundDefault(this, text___1341);
         }
-        public Match Find(string text___1323)
+        public Match Find(string text___1343)
         {
-            return IRegexNode.FindDefault(this, text___1323);
+            return IRegexNode.FindDefault(this, text___1343);
         }
-        public string Replace(string text___1325, S::Func<Match, string> format___1326)
+        public string Replace(string text___1345, S::Func<Match, string> format___1346)
         {
-            return IRegexNode.ReplaceDefault(this, text___1325, (S::Func<Match, string>) format___1326);
+            return IRegexNode.ReplaceDefault(this, text___1345, (S::Func<Match, string>) format___1346);
         }
-        public G::IReadOnlyList<string> Split(string text___1328)
+        public G::IReadOnlyList<string> Split(string text___1348)
         {
-            return IRegexNode.SplitDefault(this, text___1328);
+            return IRegexNode.SplitDefault(this, text___1348);
         }
     }
 }

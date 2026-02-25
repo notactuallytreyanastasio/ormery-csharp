@@ -4,32 +4,22 @@ namespace TemperLang.Std.Regex
 {
     public static class RegexGlobal
     {
-        internal static ISpecial return__190;
-        public static ISpecial Begin;
         internal static ISpecial return__192;
-        public static ISpecial Dot;
+        public static ISpecial Begin;
         internal static ISpecial return__194;
-        public static ISpecial End;
+        public static ISpecial Dot;
         internal static ISpecial return__196;
+        public static ISpecial End;
+        internal static ISpecial return__198;
         public static ISpecial WordBoundary;
-        internal static ISpecialSet return__198;
-        public static ISpecialSet Digit;
         internal static ISpecialSet return__200;
-        public static ISpecialSet Space;
+        public static ISpecialSet Digit;
         internal static ISpecialSet return__202;
+        public static ISpecialSet Space;
+        internal static ISpecialSet return__204;
         public static ISpecialSet Word;
-        internal static G::IReadOnlyList<int> buildEscapeNeeds__161()
+        internal static G::IReadOnlyList<int> buildEscapeNeeds__163()
         {
-            bool t___925;
-            bool t___926;
-            bool t___927;
-            bool t___928;
-            bool t___929;
-            bool t___930;
-            bool t___931;
-            bool t___932;
-            bool t___933;
-            bool t___934;
             bool t___935;
             bool t___936;
             bool t___937;
@@ -44,277 +34,287 @@ namespace TemperLang.Std.Regex
             bool t___946;
             bool t___947;
             bool t___948;
-            int t___949;
-            G::IList<int> escapeNeeds__379 = new G::List<int>();
-            int code__380 = 0;
-            while (code__380 <= 127)
+            bool t___949;
+            bool t___950;
+            bool t___951;
+            bool t___952;
+            bool t___953;
+            bool t___954;
+            bool t___955;
+            bool t___956;
+            bool t___957;
+            bool t___958;
+            int t___959;
+            G::IList<int> escapeNeeds__381 = new G::List<int>();
+            int code__382 = 0;
+            while (code__382 <= 127)
             {
-                if (code__380 == Codes.Dash)
+                if (code__382 == Codes.Dash)
                 {
-                    t___932 = true;
+                    t___942 = true;
                 }
                 else
                 {
-                    if (code__380 == Codes.Space)
+                    if (code__382 == Codes.Space)
                     {
-                        t___931 = true;
+                        t___941 = true;
                     }
                     else
                     {
-                        if (code__380 == Codes.Underscore)
+                        if (code__382 == Codes.Underscore)
                         {
-                            t___930 = true;
+                            t___940 = true;
                         }
                         else
                         {
-                            if (Codes.Digit0 <= code__380)
+                            if (Codes.Digit0 <= code__382)
                             {
-                                t___925 = code__380 <= Codes.Digit9;
+                                t___935 = code__382 <= Codes.Digit9;
                             }
                             else
                             {
-                                t___925 = false;
+                                t___935 = false;
                             }
-                            if (t___925)
+                            if (t___935)
                             {
-                                t___929 = true;
+                                t___939 = true;
                             }
                             else
                             {
-                                if (Codes.UpperA <= code__380)
+                                if (Codes.UpperA <= code__382)
                                 {
-                                    t___926 = code__380 <= Codes.UpperZ;
+                                    t___936 = code__382 <= Codes.UpperZ;
                                 }
                                 else
                                 {
-                                    t___926 = false;
+                                    t___936 = false;
                                 }
-                                if (t___926)
+                                if (t___936)
                                 {
-                                    t___928 = true;
+                                    t___938 = true;
                                 }
                                 else
                                 {
-                                    if (Codes.LowerA <= code__380)
+                                    if (Codes.LowerA <= code__382)
                                     {
-                                        t___927 = code__380 <= Codes.LowerZ;
+                                        t___937 = code__382 <= Codes.LowerZ;
                                     }
                                     else
                                     {
-                                        t___927 = false;
+                                        t___937 = false;
                                     }
-                                    t___928 = t___927;
+                                    t___938 = t___937;
                                 }
-                                t___929 = t___928;
+                                t___939 = t___938;
                             }
-                            t___930 = t___929;
+                            t___940 = t___939;
                         }
-                        t___931 = t___930;
+                        t___941 = t___940;
                     }
-                    t___932 = t___931;
+                    t___942 = t___941;
                 }
-                if (t___932)
+                if (t___942)
                 {
-                    t___949 = 0;
+                    t___959 = 0;
                 }
                 else
                 {
-                    if (code__380 == Codes.Ampersand)
+                    if (code__382 == Codes.Ampersand)
                     {
-                        t___948 = true;
+                        t___958 = true;
                     }
                     else
                     {
-                        if (code__380 == Codes.Backslash)
+                        if (code__382 == Codes.Backslash)
                         {
-                            t___947 = true;
+                            t___957 = true;
                         }
                         else
                         {
-                            if (code__380 == Codes.Caret)
+                            if (code__382 == Codes.Caret)
                             {
-                                t___946 = true;
+                                t___956 = true;
                             }
                             else
                             {
-                                if (code__380 == Codes.CurlyLeft)
+                                if (code__382 == Codes.CurlyLeft)
                                 {
-                                    t___945 = true;
+                                    t___955 = true;
                                 }
                                 else
                                 {
-                                    if (code__380 == Codes.CurlyRight)
+                                    if (code__382 == Codes.CurlyRight)
                                     {
-                                        t___944 = true;
+                                        t___954 = true;
                                     }
                                     else
                                     {
-                                        if (code__380 == Codes.Dot)
+                                        if (code__382 == Codes.Dot)
                                         {
-                                            t___943 = true;
+                                            t___953 = true;
                                         }
                                         else
                                         {
-                                            if (code__380 == Codes.Peso)
+                                            if (code__382 == Codes.Peso)
                                             {
-                                                t___942 = true;
+                                                t___952 = true;
                                             }
                                             else
                                             {
-                                                if (code__380 == Codes.Pipe)
+                                                if (code__382 == Codes.Pipe)
                                                 {
-                                                    t___941 = true;
+                                                    t___951 = true;
                                                 }
                                                 else
                                                 {
-                                                    if (code__380 == Codes.Plus)
+                                                    if (code__382 == Codes.Plus)
                                                     {
-                                                        t___940 = true;
+                                                        t___950 = true;
                                                     }
                                                     else
                                                     {
-                                                        if (code__380 == Codes.Question)
+                                                        if (code__382 == Codes.Question)
                                                         {
-                                                            t___939 = true;
+                                                            t___949 = true;
                                                         }
                                                         else
                                                         {
-                                                            if (code__380 == Codes.RoundLeft)
+                                                            if (code__382 == Codes.RoundLeft)
                                                             {
-                                                                t___938 = true;
+                                                                t___948 = true;
                                                             }
                                                             else
                                                             {
-                                                                if (code__380 == Codes.RoundRight)
+                                                                if (code__382 == Codes.RoundRight)
                                                                 {
-                                                                    t___937 = true;
+                                                                    t___947 = true;
                                                                 }
                                                                 else
                                                                 {
-                                                                    if (code__380 == Codes.Slash)
+                                                                    if (code__382 == Codes.Slash)
                                                                     {
-                                                                        t___936 = true;
+                                                                        t___946 = true;
                                                                     }
                                                                     else
                                                                     {
-                                                                        if (code__380 == Codes.SquareLeft)
+                                                                        if (code__382 == Codes.SquareLeft)
                                                                         {
-                                                                            t___935 = true;
+                                                                            t___945 = true;
                                                                         }
                                                                         else
                                                                         {
-                                                                            if (code__380 == Codes.SquareRight)
+                                                                            if (code__382 == Codes.SquareRight)
                                                                             {
-                                                                                t___934 = true;
+                                                                                t___944 = true;
                                                                             }
                                                                             else
                                                                             {
-                                                                                if (code__380 == Codes.Star)
+                                                                                if (code__382 == Codes.Star)
                                                                                 {
-                                                                                    t___933 = true;
+                                                                                    t___943 = true;
                                                                                 }
                                                                                 else
                                                                                 {
-                                                                                    t___933 = code__380 == Codes.Tilde;
+                                                                                    t___943 = code__382 == Codes.Tilde;
                                                                                 }
-                                                                                t___934 = t___933;
+                                                                                t___944 = t___943;
                                                                             }
-                                                                            t___935 = t___934;
+                                                                            t___945 = t___944;
                                                                         }
-                                                                        t___936 = t___935;
+                                                                        t___946 = t___945;
                                                                     }
-                                                                    t___937 = t___936;
+                                                                    t___947 = t___946;
                                                                 }
-                                                                t___938 = t___937;
+                                                                t___948 = t___947;
                                                             }
-                                                            t___939 = t___938;
+                                                            t___949 = t___948;
                                                         }
-                                                        t___940 = t___939;
+                                                        t___950 = t___949;
                                                     }
-                                                    t___941 = t___940;
+                                                    t___951 = t___950;
                                                 }
-                                                t___942 = t___941;
+                                                t___952 = t___951;
                                             }
-                                            t___943 = t___942;
+                                            t___953 = t___952;
                                         }
-                                        t___944 = t___943;
+                                        t___954 = t___953;
                                     }
-                                    t___945 = t___944;
+                                    t___955 = t___954;
                                 }
-                                t___946 = t___945;
+                                t___956 = t___955;
                             }
-                            t___947 = t___946;
+                            t___957 = t___956;
                         }
-                        t___948 = t___947;
+                        t___958 = t___957;
                     }
-                    if (t___948)
+                    if (t___958)
                     {
-                        t___949 = 2;
+                        t___959 = 2;
                     }
                     else
                     {
-                        t___949 = 1;
+                        t___959 = 1;
                     }
                 }
-                C::Listed.Add(escapeNeeds__379, t___949);
-                code__380 = code__380 + 1;
+                C::Listed.Add(escapeNeeds__381, t___959);
+                code__382 = code__382 + 1;
             }
-            return C::Listed.ToReadOnlyList(escapeNeeds__379);
+            return C::Listed.ToReadOnlyList(escapeNeeds__381);
         }
-        internal static G::IReadOnlyList<int> return__990;
-        internal static G::IReadOnlyList<int> escapeNeeds__163;
-        internal static RegexRefs return__991;
-        internal static RegexRefs regexRefs__162;
-        public static IRegexNode Entire(IRegexNode item__226)
+        internal static G::IReadOnlyList<int> return__1000;
+        internal static G::IReadOnlyList<int> escapeNeeds__165;
+        internal static RegexRefs return__1001;
+        internal static RegexRefs regexRefs__164;
+        public static IRegexNode Entire(IRegexNode item__228)
         {
-            return new Sequence(C::Listed.CreateReadOnlyList<IRegexNode>(Begin, item__226, End));
+            return new Sequence(C::Listed.CreateReadOnlyList<IRegexNode>(Begin, item__228, End));
         }
-        public static Repeat OneOrMore(IRegexNode item__228, bool ? reluctant = null)
+        public static Repeat OneOrMore(IRegexNode item__230, bool ? reluctant = null)
         {
-            bool reluctant__229;
+            bool reluctant__231;
             if (reluctant == null)
             {
-                reluctant__229 = false;
+                reluctant__231 = false;
             }
             else
             {
-                reluctant__229 = reluctant.Value;
+                reluctant__231 = reluctant.Value;
             }
-            return new Repeat(item__228, 1, null, reluctant__229);
+            return new Repeat(item__230, 1, null, reluctant__231);
         }
-        public static Repeat Optional(IRegexNode item__231, bool ? reluctant = null)
+        public static Repeat Optional(IRegexNode item__233, bool ? reluctant = null)
         {
-            bool reluctant__232;
+            bool reluctant__234;
             if (reluctant == null)
             {
-                reluctant__232 = false;
+                reluctant__234 = false;
             }
             else
             {
-                reluctant__232 = reluctant.Value;
+                reluctant__234 = reluctant.Value;
             }
-            return new Repeat(item__231, 0, 1, reluctant__232);
+            return new Repeat(item__233, 0, 1, reluctant__234);
         }
         static RegexGlobal()
         {
-            return__190 = new Begin();
-            Begin = return__190;
-            return__192 = new Dot();
-            Dot = return__192;
-            return__194 = new End();
-            End = return__194;
-            return__196 = new WordBoundary();
-            WordBoundary = return__196;
-            return__198 = new Digit();
-            Digit = return__198;
-            return__200 = new Space();
-            Space = return__200;
-            return__202 = new Word();
-            Word = return__202;
-            return__990 = buildEscapeNeeds__161();
-            escapeNeeds__163 = return__990;
-            return__991 = new RegexRefs();
-            regexRefs__162 = return__991;
+            return__192 = new Begin();
+            Begin = return__192;
+            return__194 = new Dot();
+            Dot = return__194;
+            return__196 = new End();
+            End = return__196;
+            return__198 = new WordBoundary();
+            WordBoundary = return__198;
+            return__200 = new Digit();
+            Digit = return__200;
+            return__202 = new Space();
+            Space = return__202;
+            return__204 = new Word();
+            Word = return__204;
+            return__1000 = buildEscapeNeeds__163();
+            escapeNeeds__165 = return__1000;
+            return__1001 = new RegexRefs();
+            regexRefs__164 = return__1001;
         }
     }
 }

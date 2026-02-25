@@ -4,73 +4,73 @@ namespace TemperLang.Std.Regex
 {
     public class Repeat: IRegexNode
     {
-        readonly IRegexNode item__217;
-        readonly int min__218;
-        readonly int ? max__219;
-        readonly bool reluctant__220;
-        public Repeat(IRegexNode item__222, int min__223, int ? max__224, bool ? reluctant = null)
+        readonly IRegexNode item__219;
+        readonly int min__220;
+        readonly int ? max__221;
+        readonly bool reluctant__222;
+        public Repeat(IRegexNode item__224, int min__225, int ? max__226, bool ? reluctant = null)
         {
-            bool reluctant__225;
+            bool reluctant__227;
             if (reluctant == null)
             {
-                reluctant__225 = false;
+                reluctant__227 = false;
             }
             else
             {
-                reluctant__225 = reluctant.Value;
+                reluctant__227 = reluctant.Value;
             }
-            this.item__217 = item__222;
-            this.min__218 = min__223;
-            this.max__219 = max__224;
-            this.reluctant__220 = reluctant__225;
+            this.item__219 = item__224;
+            this.min__220 = min__225;
+            this.max__221 = max__226;
+            this.reluctant__222 = reluctant__227;
         }
         public IRegexNode Item
         {
             get
             {
-                return this.item__217;
+                return this.item__219;
             }
         }
         public int Min
         {
             get
             {
-                return this.min__218;
+                return this.min__220;
             }
         }
         public int ? Max
         {
             get
             {
-                return this.max__219;
+                return this.max__221;
             }
         }
         public bool Reluctant
         {
             get
             {
-                return this.reluctant__220;
+                return this.reluctant__222;
             }
         }
         public Regex Compiled()
         {
             return IRegexNode.CompiledDefault(this);
         }
-        public bool Found(string text___1351)
+        public bool Found(string text___1371)
         {
-            return IRegexNode.FoundDefault(this, text___1351);
+            return IRegexNode.FoundDefault(this, text___1371);
         }
-        public Match Find(string text___1353)
+        public Match Find(string text___1373)
         {
-            return IRegexNode.FindDefault(this, text___1353);
+            return IRegexNode.FindDefault(this, text___1373);
         }
-        public string Replace(string text___1355, S::Func<Match, string> format___1356)
+        public string Replace(string text___1375, S::Func<Match, string> format___1376)
         {
-            return IRegexNode.ReplaceDefault(this, text___1355, (S::Func<Match, string>) format___1356);
+            return IRegexNode.ReplaceDefault(this, text___1375, (S::Func<Match, string>) format___1376);
         }
-        public G::IReadOnlyList<string> Split(string text___1358)
+        public G::IReadOnlyList<string> Split(string text___1378)
         {
-            return IRegexNode.SplitDefault(this, text___1358);
+            return IRegexNode.SplitDefault(this, text___1378);
         }
     }
 }

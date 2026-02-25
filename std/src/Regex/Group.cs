@@ -2,43 +2,43 @@ namespace TemperLang.Std.Regex
 {
     public class Group
     {
-        readonly string name__242;
-        readonly string value__243;
-        readonly int begin__244;
-        readonly int end__245;
-        public Group(string name__247, string value__248, int begin__249, int end__250)
+        readonly string name__244;
+        readonly string value__245;
+        readonly int begin__246;
+        readonly int end__247;
+        public Group(string name__249, string value__250, int begin__251, int end__252)
         {
-            this.name__242 = name__247;
-            this.value__243 = value__248;
-            this.begin__244 = begin__249;
-            this.end__245 = end__250;
+            this.name__244 = name__249;
+            this.value__245 = value__250;
+            this.begin__246 = begin__251;
+            this.end__247 = end__252;
         }
         public string Name
         {
             get
             {
-                return this.name__242;
+                return this.name__244;
             }
         }
         public string Value
         {
             get
             {
-                return this.value__243;
+                return this.value__245;
             }
         }
         public int Begin
         {
             get
             {
-                return this.begin__244;
+                return this.begin__246;
             }
         }
         public int End
         {
             get
             {
-                return this.end__245;
+                return this.end__247;
             }
         }
     }
